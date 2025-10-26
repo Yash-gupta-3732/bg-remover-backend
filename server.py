@@ -74,5 +74,6 @@ async def remove_background(
 
 # ✅ Render-friendly startup
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
+    import os, uvicorn
+    port = int(os.environ.get("PORT", 8000))  # Render provides the port
     uvicorn.run(app, host="0.0.0.0", port=port)
